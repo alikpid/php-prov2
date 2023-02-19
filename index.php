@@ -45,10 +45,45 @@ while ($row = mysqli_fetch_assoc($res)) {
     <?php
 
     $prev_res_room = "$row[room_number]";
+
 }
 
 ?>
 
+<table>
+    <tr>
+        <th>Room</th>
+        <th>Resident</th>
+    </tr>
+
+    <?php
+    $query = "select a.room_number, r.surname  from residents_in_accomodation ria
+inner join accommodation a on a.id = ria.id_accomodation
+INNER JOIN resident r on r.id = ria.id_resident
+order by a.room_number;
+";
+
+    $res = mysqli_query($mysqli, $query);
+
+    $prev_res_room = null;
+
+    while ($row = mysqli_fetch_assoc($res)) {
+
+        if ("$row[room_number]" != $prev_res_room){
+            echo '
+            <tr>
+                <td>'. $row['room_number'] . '</td>
+            <td>
+            ';
+        }
+        echo "$row[surname] <br>";
+
+        $prev_res_room = "$row[room_number]";
+    }
+
+    ?>
+
+</table>
 
 </body>
 </html>
