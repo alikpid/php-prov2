@@ -8,6 +8,6 @@ th, td {
 th {
     background-color: violet;
 }
-li{
-    list-style: circle;
+legend{
+    font-size: 14px;
 }
