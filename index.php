@@ -31,15 +31,16 @@
             if (!$resInAcc) die (mysqli_error($mysqli));
             $prev_res_room = null;
             while ($row = mysqli_fetch_assoc($resInAcc)) {
-                if ("$row[room_number]" != $prev_res_room) {
+                if ($row['room_number'] != $prev_res_room) {
                     echo '<tr>';
                     echo '<td>' . $row['room_number'] . '</td>';
-                    echo '<td>'.$row['check_in_date'].'</td>';
-                    echo '<td>'.$row['check_out_date'].'</td>';
+                    echo '<td>' . $row['check_in_date'] . '</td>';
+                    echo '<td>' . $row['check_out_date'] . '</td>';
                     echo '<td>';
                 }
-                echo "$row[surname] <br>";
-                $prev_res_room = "$row[room_number]";
+                echo $row['surname'];
+                echo "<br>";
+                $prev_res_room = $row['room_number'];
             }
             ?>
             </table>

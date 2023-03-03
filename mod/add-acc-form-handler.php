@@ -26,11 +26,9 @@ if (isset($_POST['submit'])) {
 
     $resInAcc = "INSERT INTO `residents_in_accommodation` (`id_accommodation`, `id_resident`)
                  VALUES ('$accId', '$resId');";
-    $resInAcc = mysqli_query($mysqli, $resInAcc);
-    if (!$resInAcc) die (mysqli_error($mysqli));
-
+    $mysqli->query($resInAcc);
     $changeIsBusy = "UPDATE room SET isBusy = 1
-                    WHERE room_number = '$room_number'";
+                    WHERE room_number = '$room_number';";
     if (!mysqli_query($mysqli, $changeIsBusy)) die (mysqli_error($mysqli));
 
     if (mysqli_query($mysqli, $updAcc)) {
