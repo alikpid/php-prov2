@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 03 2023 г., 17:16
+-- Время создания: Мар 06 2023 г., 00:48
 -- Версия сервера: 10.4.27-MariaDB
 -- Версия PHP: 8.0.25
 
@@ -84,9 +84,7 @@ INSERT INTO `resident` (`id`, `surname`, `name`, `middlename`, `passport`, `phon
 (28, 'Пупкин', 'Валерий', 'Викторович', '8118795193', '79993335533', 1),
 (32, 'Валуев', 'Никита', 'Дмитриевич', '8118795724', '79149055118', 1),
 (33, 'Васькина', 'Анна', 'Сергеевна', '7618795109', '79165405328', 0),
-(34, 'Какой-то', 'Мужик', '', '3435823490', '79990843275', 1),
-(43, 'eijniven', 'jingfn', 'ijniejn', '3893839', '39895339737', 0),
-(44, 'kjngkjeng', 'ekjnekrn', 'kdjdndjgn', '3758973847', '93845793875', 1);
+(34, 'Какой-то', 'Мужик', '', '3435823490', '79990843275', 1);
 
 -- --------------------------------------------------------
 
@@ -145,7 +143,9 @@ INSERT INTO `room` (`room_number`, `price_per_day`, `isBusy`, `number_of_beds`) 
 ('5A', '2700', 0, 3),
 ('5B', '2500', 0, 3),
 ('6A', '1500', 1, 1),
-('6B', '1900', 0, 1);
+('6B', '1900', 0, 2),
+('7A', '1000', 0, 3),
+('7B', '2000', 0, 2);
 
 --
 -- Индексы сохранённых таблиц
@@ -185,13 +185,13 @@ ALTER TABLE `room`
 -- AUTO_INCREMENT для таблицы `accommodation`
 --
 ALTER TABLE `accommodation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 
 --
 -- AUTO_INCREMENT для таблицы `resident`
 --
 ALTER TABLE `resident`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

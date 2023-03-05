@@ -15,7 +15,7 @@
     <div class="row justify-content-center">
         <div class="col-md-4">
 
-            <form action="" method="post" class="my-2">
+            <form method="post" class="my-2">
 
                 <div class="form-group">
                     <label for="name">Имя</label>
@@ -35,7 +35,7 @@
 
                 <div class="form-group">
                     <label for="passport">Серия и номер паспорта (без пробелов)</label>
-                    <input type="text" class="form-control" id="passport" name="passport" maxlength="10" required placeholder="9999111222">
+                    <input type="text" class="form-control" id="passport" name="passport" maxlength="10" required>
                 </div>
 
                 <div class="form-group">
@@ -57,7 +57,6 @@
                 <br>
                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             </form>
-
         </div>
     </div>
 </div>

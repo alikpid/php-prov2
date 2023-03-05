@@ -32,8 +32,8 @@
                     <input type="text" class="form-control" id="bill" name="bill">
 
                 <div class="checkselect">
-                    <label for="resId">Гость</label>
-                    <select class="form-select" multiple aria-label="multiple select example" id="resId" name="resId">
+                    <label for="resId">Гость(и)</label>
+                    <select class="form-select" multiple aria-label="multiple select example" id="resId" name="resId[]">
 
                     <?php
                         $query = "SELECT `surname`, `id` FROM `hotel`.`resident`";
