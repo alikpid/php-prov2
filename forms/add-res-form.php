@@ -19,12 +19,12 @@
 
                 <div class="form-group">
                     <label for="name">Имя</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <input type="text" class="form-control" id="name" name="name" value="<?php echo htmlspecialchars($name); ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="surname">Фамилия</label>
-                    <input type="text" class="form-control" id="surname" name="surname" required>
+                    <input type="text" class="form-control" id="surname" name="surname" value="<?php echo htmlspecialchars($surname); ?>">
                 </div>
 
 
@@ -35,12 +35,12 @@
 
                 <div class="form-group">
                     <label for="passport">Серия и номер паспорта (без пробелов)</label>
-                    <input type="text" class="form-control" id="passport" name="passport" maxlength="10" required>
+                    <input type="text" class="form-control" id="passport" name="passport" maxlength="10" value="<?php echo htmlspecialchars($passport); ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="phone_number">Телефон</label>
-                    <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                    <input type="text" class="form-control" id="phone_number" name="phone_number" value="<?php echo htmlspecialchars($phone_number); ?>">
                 </div>
 
                 <div class="form-group">

@@ -19,7 +19,7 @@
 
                 <div class="form-group">
                     <label for="check_in_date">Дата заселения</label>
-                    <input type="datetime-local" class="form-control" id="check_in_date" name="check_in_date" required>
+                    <input type="datetime-local" class="form-control" id="check_in_date" name="check_in_date">
                 </div>
 
                 <div class="form-group">
@@ -36,6 +36,7 @@
                     <select class="form-select" multiple aria-label="multiple select example" id="resId" name="resId[]">
 
                     <?php
+                        global $mysqli;
                         $query = "SELECT `surname`, `id` FROM `hotel`.`resident`";
                         $res = mysqli_query($mysqli, $query);
                         if(!$res) die (mysqli_error($mysqli));

@@ -38,18 +38,19 @@ function addResidentToAccommodation($resId, $accId){
     $resInAcc = mysqli_query($mysqli, $resInAcc);
     if (!$resInAcc) die (mysqli_error($mysqli));
 }
+
 function submitAccommodation(){
     global $mysqli;
     $resIdArray = $_POST['resId'];
     $room_number = $_GET['id'];
     if (!isValidCount($resIdArray, $room_number)) {
-        storeError("Мого гостей на комнату");
+        storeError("Много гостей на комнату");
         return 1;
-    };
+    }
     $accId = createAccommodation($room_number);
-    $check_in_date = strip_tags($_POST['check_in_date']);
-    $check_out_date = strip_tags($_POST['check_out_date']);
-    $bill = (int)strip_tags($_POST['bill']);
+    $check_in_date = $_POST['check_in_date'];
+    $check_out_date = $_POST['check_out_date'];
+    $bill = $_POST['bill'];
     foreach($resIdArray as $id)
         addResidentToAccommodation($id, $accId);
     $updAcc = "UPDATE `accommodation` 
@@ -63,8 +64,8 @@ function submitAccommodation(){
     if (!mysqli_query($mysqli, $updAcc)) die (mysqli_error($mysqli));
     return 0;
 }
-if (isset($_POST['submit']))
-{
+
+if (isset($_POST['submit'])) {
     if (submitAccommodation() == 0)
     {
         echo "<h3>Заселение добавлено</h3>";
@@ -74,6 +75,6 @@ if (isset($_POST['submit']))
 }
 if (!empty($errors))
     foreach ($errors as $error)
-        echo '<p>' . $error . '</p>';
+        echo $error . '<br>';
 
 
